@@ -13,7 +13,15 @@
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/commander-version.git"
   },
-  "keywords": [],
+  "keywords": [
+    "commander",
+    "version",
+    "set",
+    "package",
+    "json",
+    "pkg",
+    "plugin"
+  ],
   "files": [
     "build"
   ],
