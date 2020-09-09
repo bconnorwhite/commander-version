@@ -16,7 +16,7 @@
 
 <br />
 
-> An replacement for Commander that automatically sets the version based on your package.json.
+> A wrapper for Commander that automatically sets the version based on your package.json.
 
 ## Installation
 
