@@ -1,0 +1,33 @@
+{
+  "name": "commander-version",
+  "version": "1.0.0",
+  "description": "A wrapper for Commander that automatically sets the version based on your package.json",
+  "license": "MIT",
+  "author": {
+    "name": "Connor White",
+    "email": "connor.bcw@gmail.com",
+    "url": "https://connorwhite.org"
+  },
+  "homepage": "https://connorwhite.org/github/commander-version",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bconnorwhite/commander-version.git"
+  },
+  "keywords": [],
+  "files": [
+    "build"
+  ],
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "bob build",
+    "postversion": "git push",
+    "prepublishOnly": "yarn run build"
+  },
+  "dependencies": {
+    "@bconnorwhite/module": "^2.0.2",
+    "commander": "^6.1.0"
+  },
+  "devDependencies": {
+    "@bconnorwhite/bob": "^2.1.0"
+  }
+}
