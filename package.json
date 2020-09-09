@@ -1,6 +1,6 @@
 {
   "name": "commander-version",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for Commander that automatically sets the version based on your package.json",
   "license": "MIT",
   "author": {
