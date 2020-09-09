@@ -1,4 +1,4 @@
-import commander, { createCommand } from "commander";
+import commander, { Command } from "commander";
 import { getVersionSync } from "@bconnorwhite/module";
 
 /**
@@ -9,16 +9,15 @@ import { getVersionSync } from "@bconnorwhite/module";
  *
  * You can optionally supply the  flags and description to override the defaults.
  */
-export default (dirname: string, flags: string | undefined = "-v --version", description?: string | undefined) => {
+export default function(dirname: string, flags: string | undefined = "-v --version", description?: string | undefined) {
   const version = getVersionSync(dirname);
   if(version) {
-    return createCommand().version(version, flags, description);
+    return new Command().version(version, flags, description);
   } else {
-    return createCommand();
+    return new Command();
   }
 }
 
 export {
-  commander,
-  createCommand
+  commander
 }

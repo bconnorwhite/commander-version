@@ -29,7 +29,8 @@
   "scripts": {
     "build": "bob build",
     "postversion": "git push",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "test": "node ./test/default.test.js -h && node ./test/commander.test.js -h"
   },
   "dependencies": {
     "@bconnorwhite/module": "^2.0.2",

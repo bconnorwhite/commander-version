@@ -30,9 +30,9 @@ npm install commander-version
 
 ## API
 
-To set the version, import `program` the same as you would for Commander, just pass `__dirname`:
+### Default
 
-> Note: the default flags are set to "-v --version" to be inline with other programs, such as Node.js.
+To set the version, import `program` the same as you would for Commander, just pass `__dirname`:
 
 ```ts
 import program from "commander-version";
@@ -44,7 +44,15 @@ program(__dirname)
   .parse();
 ```
 
-Add flags or descriptions the same as with `program.version()`:
+This creates a new Command rather than using the global Command, which can cause issues.
+
+##
+
+### Flags and Description
+
+You can also add flags or descriptions the same as with `program.version()`:
+
+> Note: the default flags are set to "-v --version" to be inline with other programs, such as Node.js.
 
 ```ts
 import program from "commander-version";
@@ -58,14 +66,28 @@ program(__dirname, "-V --version", "custom version description")
   .parse();
 ```
 
-For convenience, the Commander namespace and createCommand function can also be imported:
+##
+
+### Types
+
+For creating types, the Commander namespace can also be imported:
 
 ```ts
-import { commander, createCommand } from "commander-version";
+import { commander } from "commander-version";
 
 type MyType = commander.Command;
+```
 
-createCommand("my-command")
+##
+
+### Commander
+
+For convenience, Commander can also be used without setting the version:
+
+```ts
+import { commander } from "commander-version";
+
+new commander.Command("my-command")
   .description("...")
   // ...
 ```
