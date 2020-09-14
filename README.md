@@ -82,12 +82,16 @@ type MyType = commander.Command;
 
 ### Commander
 
-For convenience, Commander can also be used without setting the version:
+For convenience, Commander and createCommand can also be used without setting the version:
 
 ```ts
-import { commander } from "commander-version";
+import { commander, createCommand } from "commander-version";
 
 new commander.Command("my-command")
+  .description("...")
+  // ...
+
+const myCommand = createCommand("my-command")
   .description("...")
   // ...
 ```

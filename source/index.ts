@@ -18,6 +18,9 @@ export default function(dirname: string, flags: string | undefined = "-v --versi
   }
 }
 
+const createCommand = commander.createCommand;
+
 export {
-  commander
+  commander,
+  createCommand
 }
