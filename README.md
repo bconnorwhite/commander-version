@@ -32,6 +32,8 @@ npm install commander-version
 
 ### Default
 
+> Note: also capitalizes 'help' and 'version' descriptions by default.
+
 To set the version, import `program` the same as you would for Commander, just pass `__dirname`:
 
 ```ts
