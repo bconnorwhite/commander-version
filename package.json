@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@bconnorwhite/module": "^2.0.2",
-    "commander": "^6.1.0"
+    "commander": "^7.2.0"
   },
   "devDependencies": {
     "@bconnorwhite/bob": "^2.1.0"
