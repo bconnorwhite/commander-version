@@ -1,6 +1,6 @@
 console.log("\ncommander.test.js:\n");
 
-const { commander } = require('../build/index.js');
+const commander = require('../build/index.js')["default"];
 
 commander
   .createCommand("commander")

@@ -34,12 +34,12 @@ npm install commander-version
 
 > Note: also capitalizes 'help' and 'version' descriptions by default.
 
-To set the version, import `program` the same as you would for Commander, just pass `__dirname`:
+To set the version, import `program` the same as you would for Commander, just pass `__dirname` or `import.meta.url`:
 
 ```ts
-import program from "commander-version";
+import { program } from "commander-version";
 
-program(__dirname)
+program(__dirname) // Use `import.meta.url` for ESM
   .name("my-program")
   .description("...")
   // ...
@@ -57,7 +57,7 @@ You can also add flags or descriptions the same as with `program.version()`:
 > Note: the default flags are set to "-v --version" to be inline with other programs, such as Node.js.
 
 ```ts
-import program from "commander-version";
+import { program } from "commander-version";
 
 // To set flags back to the Commander default of "-V --version", for example:
 
@@ -75,7 +75,7 @@ program(__dirname, "-V --version", "custom version description")
 For creating types, the Commander namespace can also be imported:
 
 ```ts
-import { commander } from "commander-version";
+import commander from "commander-version";
 
 type MyType = commander.Command;
 ```
@@ -87,7 +87,7 @@ type MyType = commander.Command;
 For convenience, Commander and createCommand can also be used without setting the version:
 
 ```ts
-import { commander, createCommand } from "commander-version";
+import commander, { createCommand } from "commander-version";
 
 new commander.Command("my-command")
   .description("...")

@@ -16,24 +16,21 @@ function setDefaultHelp(command: commander.Command): commander.Command {
  *
  * You can optionally supply flags and description to override the defaults.
  */
-export default function(dirname: string, flags = "-v --version", description = "Output the version number") {
+export const program = function (dirname: string, flags = "-v --version", description = "Output the version number") {
   const version = getVersionSync(dirname);
   const command = new Command();
   if(version) {
     command.version(version, flags, description);
   }
   return setDefaultHelp(command);
-}
+};
 
 const defaultCreateCommand = commander.createCommand;
 
-const createCommand = (name?: string) => {
+export const createCommand = function (name?: string) {
   return setDefaultHelp(defaultCreateCommand(name));
-}
+};
 
 commander.createCommand = createCommand;
 
-export {
-  commander,
-  createCommand
-}
+export default commander;
